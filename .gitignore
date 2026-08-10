@@ -1,24 +1,30 @@
-# Виртуальные окружения
-.venv/
-venv/
-env/
+# Скомпилированные бинарники.
+# Ведущий слэш обязателен: без него шаблон «booking» скрыл бы и
+# каталог internal/booking с исходниками.
+/booking
+/booking.exe
+*.exe
+*.dll
+*.so
+*.dylib
 
-# Байт-код Python
-__pycache__/
-*.py[cod]
-*$py.class
+# Артефакты тестов и профилирования
+*.test
+*.out
+coverage.html
 
-# Дистрибутивы и сборка
-build/
-dist/
-*.egg-info/
+# Каталог сборки
+/bin/
+/dist/
 
 # База данных SQLite (создаётся локально командой `init`)
 *.db
 *.db-journal
+*.db-shm
+*.db-wal
 *.sqlite3
 
-# Локальные настройки со СМТП-паролями
+# Локальные настройки со SMTP-паролями
 .env
 
 # Служебные файлы IDE и ОС
@@ -27,9 +33,6 @@ dist/
 .DS_Store
 Thumbs.db
 
-# Кэш инструментов
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
-htmlcov/
-.coverage
+# Каталог зависимостей, если используется vendoring
+# (по умолчанию модули берутся из кэша Go, каталог не нужен)
+/vendor/
