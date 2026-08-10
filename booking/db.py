@@ -101,7 +101,9 @@ def transaction(conn: sqlite3.Connection) -> Iterator[sqlite3.Connection]:
     conn.execute("COMMIT")
 
 
-def setup(db_path: Union[str, Path], room_count: int = 5) -> sqlite3.Connection:
+def setup(
+    db_path: Union[str, Path], room_count: int = 5
+) -> sqlite3.Connection:
     """Открыть базу, создать схему и справочник кабинетов."""
     conn = connect(db_path)
     init_schema(conn)
