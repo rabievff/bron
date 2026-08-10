@@ -1,0 +1,35 @@
+# Виртуальные окружения
+.venv/
+venv/
+env/
+
+# Байт-код Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Дистрибутивы и сборка
+build/
+dist/
+*.egg-info/
+
+# База данных SQLite (создаётся локально командой `init`)
+*.db
+*.db-journal
+*.sqlite3
+
+# Локальные настройки со СМТП-паролями
+.env
+
+# Служебные файлы IDE и ОС
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Кэш инструментов
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage

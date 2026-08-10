@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+# Метаданные проекта согласно PEP 621.
+[project]
+name = "office-booking"
+version = "1.0.0"
+description = "CLI для бронирования кабинетов офиса без сторонних зависимостей"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+keywords = ["booking", "office", "cli", "sqlite"]
+classifiers = [
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "Programming Language :: Python :: 3",
+    "Topic :: Office/Business :: Scheduling",
+]
+# Зависимостей нет: используется только стандартная библиотека.
+dependencies = []
+
+[project.scripts]
+booking = "booking.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["booking*"]
+
+# Конфигурация линтеров под PEP 8 (79 символов в строке).
+[tool.ruff]
+line-length = 79
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "D", "UP", "B", "ANN"]
+ignore = ["D203", "D213", "ANN101"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "pep257"
+
+[tool.black]
+line-length = 79
