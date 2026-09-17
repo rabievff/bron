@@ -1,3 +1,20 @@
+## Meeting-room booking (CLI)
+
+A small command-line service for booking office meeting rooms: check availability, book, cancel, list, and notify participants by e-mail.
+
+**Stack:** Go 1.23+, standard library (flag, net/smtp, database/sql), SQLite via modernc.org/sqlite — one external dependency.
+**Tests:** 53 tests, 73.6% coverage.
+**Layers:** CLI · service · storage · models.
+
+```
+git clone https://github.com/rabievff/bron.git
+cd bron
+go build -o booking ./cmd/booking
+./booking init
+./booking check -d tomorrow -f 10:00 -t 11:30
+```
+
+
 # Бронирование кабинетов офиса
 
 Консольная утилита для бронирования пяти переговорных кабинетов:
